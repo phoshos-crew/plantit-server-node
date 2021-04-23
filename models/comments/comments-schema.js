@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const commentsSchema = mongoose.Schema(
     {
         _id: String,
-        posterType: {String, enumerable: ["USER", "GROUP"]},
+        postId: String,
         likedByUsers: [String],
         originalPoster: String,
     }, {collection: "groups"})

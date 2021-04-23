@@ -5,9 +5,8 @@ const groupsSchema = mongoose.Schema(
         groupName: String,
         groupDesc: String,
         groupMembers: [String],
-        groupPictures: [String],
+        groupPicture: URL,
         groupPosts: [String],
-        groupComments: [String],
         groupAdmins: [String]
     }, {collection: "groups"})
 
