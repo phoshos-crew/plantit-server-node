@@ -1,0 +1,74 @@
+[
+    {
+        "_id": "123",
+        "username": "sneakysignal",
+        "password": "eG_4j7",
+        "firstName": "Johnson",
+        "lastName": "And Johnson",
+        "email": "jandj@johnson.com",
+        "phone": "781-000-1111",
+        "role": "SITE_ADMIN",
+        "usersFollowed": ["snobbycigarette"],
+        "groupMemberships": ["RiceFarmersUnited"]
+    },
+    {
+        "_id": "666",
+        "username": "pickydocument",
+        "password": "M5DwkH",
+        "firstName": "The",
+        "lastName": "Don",
+        "email": "trumpster@thedonald.com",
+        "phone": "666-666-6666",
+        "role": "GROUP_ADMIN",
+        "usersFollowed": ["horriblepudding", "sneakysignal", "slimypocket"],
+        "groupMemberships": ["ca$hcr0ps!", "SucculentGods"]
+    },
+    {
+        "_id": "042",
+        "username": "rightfulparking",
+        "password": "6UqLjD",
+        "firstName": "The",
+        "lastName": "Rock",
+        "email": "stoney@boulder.com",
+        "phone": "617-411-4242",
+        "role": "GROUP_ADMIN",
+        "usersFollowed": [],
+        "groupMemberships": ["RiceFarmersUnited", "SucculentGods", "StayPlanted"]
+    },
+    {
+        "_id": "456",
+        "username": "horriblepudding",
+        "password": "Kf4cEC",
+        "firstName": "Jane",
+        "lastName": "Doe",
+        "email": "jdough@money.com",
+        "phone": "339-000-0000",
+        "role": "SITE_ADMIN",
+        "usersFollowed": ["rightfulparking", "pickydocument"],
+        "groupMemberships": ["ca$hcr0ps!", "StayPlanted"]
+    },
+    {
+        "_id": "789",
+        "username": "slimypocket",
+        "password": "2gDbFM",
+        "firstName": "Johnson",
+        "lastName": "And Johnson",
+        "email": "jandj@johnson.com",
+        "phone": "781-000-1111",
+        "role": "GENERAL_USER",
+        "usersFollowed": ["snobbycigarette", "rightfulparking", "horriblepudding", "pickydocument", "sneakysignal"],
+        "groupMemberships": ["HerbChambers"]
+    },
+    {
+        "_id": "1337",
+        "username": "snobbycigarette",
+        "password": "y5vUp9",
+        "firstName": "Leet",
+        "lastName": "Coder",
+        "email": "snowden@nsa.org",
+        "phone": "888-888-8888",
+        "role": "GROUP_ADMIN",
+        "usersFollowed": ["sneakysignal", "rightfulparking"],
+        "groupMemberships": ["SucculentGods", "HerbChambers"]
+    }
+]
