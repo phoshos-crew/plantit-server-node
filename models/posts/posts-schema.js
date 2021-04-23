@@ -5,7 +5,7 @@ const postsSchema = mongoose.Schema(
         imageUrl: URL,
         likedByUsers: [String],
         originalPoster: String,
-        commentId: [String]
+        commentIds: [String]
     }, {collection: "posts"})
 
 module.exports = postsSchema
