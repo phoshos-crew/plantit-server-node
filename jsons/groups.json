@@ -1,0 +1,47 @@
+[
+  {
+    "_id": "111",
+    "groupName": "ca$hcr0ps!",
+    "groupDesc": "all about big farma...",
+    "groupMembers": ["pickydocument", "horriblepudding"],
+    "groupPicture": "https://images.unsplash.com/photo-1602770816583-cc70e98693be?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+    "groupPosts": ["am1yj"],
+    "groupAdmins": ["pickydocument"]
+  },
+  {
+    "_id": "222",
+    "groupName": "SucculentGods",
+    "groupDesc": "Green thumbs gone easy",
+    "groupMembers": ["pickydocument", "rightfulparking", "snobbycigarette"],
+    "groupPicture": "https://images.unsplash.com/photo-1526565782131-a13074f0dbbb?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+    "groupPosts": ["l2flg", "55p2g"],
+    "groupAdmins": ["snobbycigarette", "rightfulparking"]
+  },
+  {
+    "_id": "234",
+    "groupName": "StayPlanted",
+    "groupDesc": "explore your roots",
+    "groupMembers": ["horriblepudding", "rightfulparking"],
+    "groupPicture": "https://images.unsplash.com/photo-1547401372-0ac4589c4d3e?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=963&q=80",
+    "groupPosts": ["u10lj", "sa198"],
+    "groupAdmins": ["rightfulparking"]
+  },
+  {
+    "_id": "069",
+    "groupName": "RiceFarmersUnited",
+    "groupDesc": "rice for life",
+    "groupMembers": ["rightfulparking", "sneakysignal"],
+    "groupPicture": "https://images.unsplash.com/photo-1610690154202-0184c0ddf846?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80",
+    "groupPosts": ["thm5l", "jot92"],
+    "groupAdmins": ["rightfulparking"]
+  },
+  {
+    "_id": "420",
+    "groupName": "HerbChambers",
+    "groupDesc": "chambers of Herbs... ya dig?",
+    "groupMembers": ["snobbycigarette", "slimypocket"],
+    "groupPicture": "https://images.unsplash.com/photo-1551772413-6c1b7dc18548?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1650&q=80",
+    "groupPosts": ["230tx"],
+    "groupAdmins": ["snobbycigarette"]
+  }
+]
