@@ -5,6 +5,7 @@ const commentsSchema = mongoose.Schema(
         postId: String,
         likedByUsers: [String],
         originalPoster: String,
+        commentBody: String
     }, {collection: "groups"})
 
 module.exports = commentsSchema
