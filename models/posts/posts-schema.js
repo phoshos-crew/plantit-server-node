@@ -2,7 +2,7 @@ const mongoose = require('mongoose')
 const postsSchema = mongoose.Schema(
     {
         _id: String,
-        imageUrl: URL,
+        imageUrl: String,
         likedByUsers: [{
                 type: String,
                 ref: 'UsersModel'
