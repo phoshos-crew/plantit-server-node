@@ -9,8 +9,14 @@ const usersSchema = mongoose.Schema(
         email: String,
         phone: String,
         role: {type: String, enumerable: ["SITE_ADMIN", "GROUP_ADMIN", "GENERAL_USER"]},
-        usersFollowed: [String],
-        groupMemberships: [String]
+        usersFollowed: [{
+                type: String,
+                ref: 'UsersModel'
+        }],
+        groupMemberships: [{
+                type: String,
+                ref: 'GroupsModel'
+        }]
     }, {collection: "users"})
 
 module.exports = usersSchema
