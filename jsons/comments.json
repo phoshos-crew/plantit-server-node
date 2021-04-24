@@ -2,50 +2,50 @@
   {
     "_id": "555",
     "postId": "l2flg",
-    "likedByUsers": ["pickydocument", "horriblepudding", "sneakysignal"],
-    "originalPoster": "slimypocket",
+    "likedByUsers": ["666", "456", "123"],
+    "originalPoster": "789",
     "commentBody": "LFG plants all day !!"
   },
   {
     "_id": "09",
     "postId": "tclb7",
-    "likedByUsers": ["horriblepudding", "rightfulpudding"],
-    "originalPoster": "sneakysignal",
+    "likedByUsers": ["456", "042"],
+    "originalPoster": "123",
     "commentBody": "namaste lol?"
   },
   {
     "_id": "1",
     "postId": "sa198",
-    "likedByUsers": ["snobbycigarette"],
-    "originalPoster": "rightfulparking",
+    "likedByUsers": ["1337"],
+    "originalPoster": "042",
     "commentBody": "wow I love your plant, it's so big and green!"
   },
   {
     "_id": "777",
     "postId": "am1yj",
-    "likedByUsers": ["pickydocument"],
-    "originalPoster": "snobbycigarette",
+    "likedByUsers": ["666"],
+    "originalPoster": "1337",
     "commentBody": "stay planted my friend!"
   },
   {
     "_id": "1338",
     "postId": "am1yj",
     "likedByUsers": [],
-    "originalPoster": "horriblepudding",
+    "originalPoster": "456",
     "commentBody": "how did you grow your plant so fast?!"
   },
   {
     "_id": "uuId22",
     "postId": "u101j",
-    "likedByUsers": ["sneakysignal", "snobbycigarette", "rightfulparking", "horriblepudding", "pickydocument"],
-    "originalPoster": "snobbycigarette",
+    "likedByUsers": ["123", "1337", "042", "456", "666"],
+    "originalPoster": "1337",
     "commentBody": "air succulents rock, no mess!"
   },
   {
     "_id": "ball!n",
     "postId": "jot92",
-    "likedByUsers": ["slimypocket", "rightfulparking"],
-    "originalPoster": "rightfulparking",
+    "likedByUsers": ["789", "042"],
+    "originalPoster": "042",
     "commentBody": "pesky weeds are interfering again..."
   }
 ]

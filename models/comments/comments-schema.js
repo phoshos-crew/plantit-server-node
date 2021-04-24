@@ -2,10 +2,19 @@ const mongoose = require('mongoose')
 const commentsSchema = mongoose.Schema(
     {
         _id: String,
-        postId: String,
-        likedByUsers: [String],
-        originalPoster: String,
+        postId: {
+                type: String,
+                ref: 'PostsModel'
+        },
+        likedByUsers: [{
+                type: String,
+                ref: 'UsersModel'
+        }],
+        originalPoster: {
+                type: String,
+                ref: 'UsersModel'
+        },
         commentBody: String
-    }, {collection: "groups"})
+    }, {collection: "comments"})
 
 module.exports = commentsSchema
