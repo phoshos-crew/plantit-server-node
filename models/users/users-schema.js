@@ -16,6 +16,14 @@ const usersSchema = mongoose.Schema(
         groupMemberships: [{
                 type: String,
                 ref: 'GroupsModel'
+        }],
+        comments: [{
+                type: String,
+                ref: 'CommentsModel'
+        }],
+        posts: [{
+                type: String,
+                ref: 'PostsModel'
         }]
     }, {collection: "users"})
 
