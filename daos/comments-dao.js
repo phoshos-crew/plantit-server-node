@@ -1,28 +1,47 @@
 const commentsModel = require('../models/comments/comments-model')
+const mongoose = require('mongoose')
 
 const findAllComments = () => {
     return commentsModel.find();
 }
 
-const findCommentsForUser = (userId) => {
-    return commentsModel.findOne({originalPoster: userId})
-        .populate('comments')
+const findCommentsForPost = (postId) => {
+    return commentsModel.find({postId: postId})
+        .populate('likedByUsers')
+        .populate('originalPoster')
+        .exec()
 }
 
 const findCommentById = (cid) => {
     return commentsModel.findById(cid)
 }
 
-const createComment = (userId, comment) => {
+const createComment = (postId, comment) => {
     return commentsModel.create(
         {
-            postId: comment.postId, likedByUsers: comment.likedByUsers, originalPoster: comment.originalPoster,
-            body: comment.body
-        })
+            _id: new mongoose.Types.ObjectId().toHexString(),
+            postId: postId,
+            likedByUsers: [],
+            originalPoster: comment.originalPoster,
+            commentBody: comment.commentBody
+        }
+    ).then(newComment => commentsModel.findById(newComment._id)
+        .populate('originalPoster')
+        .exec())
 }
 
 const updateComment = (cid, newBody) => {
-    return commentsModel.updateOne({_id: cid}, {$set: {body: newBody}})
+    return commentsModel.updateOne(
+        {_id: cid},
+        {$set: {body: newBody}}
+    ).then(updatedComment => commentsModel.findById(updatedComment._id)
+        .populate('likedByUsers')
+        .populate('originalPoster')
+        .exec())
+}
+
+const deleteComment = (cid) => {
+    return commentsModel.deleteOne({_id: cid})
 }
 
 const deleteAllCommentsForUser = (userId) => {
@@ -35,9 +54,11 @@ const deleteOneCommentForUser = (userId, cid) => {
 
 module.exports = {
     findAllComments,
-    findCommentsForUser,
+    findCommentsForPost,
     findCommentById,
     createComment,
     deleteAllCommentsForUser,
-    deleteOneCommentForUser
+    deleteOneCommentForUser,
+    deleteComment,
+    updateComment
 }
