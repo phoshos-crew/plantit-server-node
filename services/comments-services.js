@@ -1,7 +1,7 @@
 const commentsDao = require('../daos/comments-dao')
 
-const findCommentsForUser = (userId, res) => {
-    return commentsDao.findCommentsForUser(userId)
+const findCommentsForPost = (postId, res) => {
+    return commentsDao.findCommentsForPost(postId)
         .then((comments) => {
             if (comments) {
                 return comments
@@ -11,6 +11,21 @@ const findCommentsForUser = (userId, res) => {
         })
 }
 
+const createComment = (postId, comment) => {
+    return commentsDao.createComment(postId, comment)
+}
+
+const deleteComment = (commentId) => {
+    return commentsDao.deleteComment(commentId)
+}
+
+const updateComment = (cid, comment) => {
+    return commentsDao.updateComment(cid, comment)
+}
+
 module.exports = {
-    findCommentsForUser
+    findCommentsForPost,
+    deleteComment,
+    updateComment,
+    createComment
 }

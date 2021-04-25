@@ -14,7 +14,7 @@ const commentsSchema = mongoose.Schema(
                 type: String,
                 ref: 'UsersModel'
         },
-        body: String
+        commentBody: String
     }, {collection: "comments"})
 
 module.exports = commentsSchema

@@ -8,7 +8,7 @@ const groupsSchema = mongoose.Schema(
                 type: String,
                 ref: 'UsersModel'
         }],
-        groupPicture: URL,
+        groupPicture: String,
         groupPosts: [{
                 type: String,
                 ref: 'PostsModel'
