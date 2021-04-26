@@ -24,7 +24,7 @@ module.exports = (app) => {
     }
 
     const logout = (req, res) => {
-        delete req.session.currentUser
+        req.session.destroy()
         res.sendStatus(200)
     }
 
