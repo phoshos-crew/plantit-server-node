@@ -33,8 +33,44 @@ const findPostById = (pid, res) => {
         })
 }
 
+const createPost = (post, res) => {
+    return postsDao.createPost(post)
+        .then((post) => {
+            if (post) {
+                return post
+            } else {
+                res.sendStatus(404)
+            }
+        })
+}
+
+const updatePost = (pid, post, res) => {
+    return postsDao.updatePost(pid, post)
+        .then((updatedPost) => {
+            if (updatedPost) {
+                return updatedPost
+            } else {
+                res.sendStatus(400)
+            }
+        })
+}
+
+const deletePost = (pid, res) => {
+    return postsDao.deletePost(pid)
+        .then((deletedPost) => {
+            if(deletedPost) {
+                res.sendStatus(200)
+            } else {
+                res.sendStatus(400)
+            }
+        })
+}
+
 module.exports = {
     findPostsForUser,
     findAllPosts,
-    findPostById
+    findPostById,
+    createPost,
+    updatePost,
+    deletePost
 }
