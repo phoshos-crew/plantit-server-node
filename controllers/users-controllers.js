@@ -11,7 +11,8 @@ module.exports = (app) => {
     }
 
     const login = (req, res) => {
-        usersService.login(req.body.username, req.body.password)
+        const credentials = req.body.credentials;
+        usersService.login(credentials.username, credentials.password)
             .then((actualUser) => {
                 if (actualUser) {
                     req.session["currentUser"] = actualUser
@@ -23,7 +24,7 @@ module.exports = (app) => {
     }
 
     const logout = (req, res) => {
-        delete req.session.currentUser
+        req.session.destroy()
         res.sendStatus(200)
     }
 
