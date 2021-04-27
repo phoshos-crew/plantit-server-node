@@ -24,6 +24,7 @@ const createComment = (postId, comment) => {
             likedByUsers: [],
             originalPoster: comment.originalPoster,
             commentBody: comment.commentBody
+
         }
     ).then(newComment => commentsModel.findById(newComment._id)
         .populate('originalPoster')
