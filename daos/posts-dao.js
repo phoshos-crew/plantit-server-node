@@ -33,8 +33,8 @@ const createPost = (post) => {
             likedByUsers: [],
             originalPoster: post.originalPoster,
             commentIds: []
-        }
-    ).then(newPost => postsModel.findById(newPost._id)
+        })
+        .then(newPost => postsModel.findById(newPost._id)
         .populate('originalPoster')
         .exec())
 }
