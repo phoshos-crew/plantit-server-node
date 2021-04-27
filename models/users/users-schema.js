@@ -24,7 +24,8 @@ const usersSchema = mongoose.Schema(
         posts: [{
                 type: String,
                 ref: 'PostsModel'
-        }]
+        }],
+        plantsOwned: [{plantId: String, _id: false}]
     }, {collection: "users"})
 
 module.exports = usersSchema

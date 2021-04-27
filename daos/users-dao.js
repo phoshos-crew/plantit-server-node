@@ -22,10 +22,21 @@ const createUser = (user) => {
     return usersModel.create(user)
 }
 
+const addPlantOwned = (userId, plant) => {
+    return usersModel.findOneAndUpdate(
+        {_id: userId},
+        {
+            $push: {
+                plantsOwned: {plantId: plant}
+            }},
+        {returnOriginal: false, useFindAndModify: false})
+}
+
 module.exports = {
     findUserById,
     findUserByUsername,
     findUserByCredentials,
     createUser,
-    findAllUsers
+    findAllUsers,
+    addPlantOwned
 }

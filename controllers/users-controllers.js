@@ -37,8 +37,48 @@ module.exports = (app) => {
         }
     }
 
+    const plant = (req, res) => {
+        const userId = req.params["userId"]
+        const plantToAdd = req.body.plantId;
+        usersService.addPlantOwned(userId, plantToAdd)
+            .then((updatedList) => {
+                if (updatedList) {
+                    res.send(updatedList)
+                } else {
+                    res.sendStatus(403)
+                }
+            })
+    }
+
+    const userById = (req, res) => {
+        const userId = req.params["userId"]
+        usersService.findUserById(userId)
+            .then((userFound) => {
+                if(userFound) {
+                    res.send(userFound)
+                } else {
+                    res.sendStatus(404)
+                }
+            })
+    }
+
+    const userByName = (req, res) => {
+        const userName = req.params["userName"]
+        usersService.findUserByUserName(userName)
+            .then((userFound) => {
+                if (userFound) {
+                    res.send(userFound)
+                } else {
+                    res.sendStatus(404)
+                }
+            })
+    }
+
     app.post("/api/register", register)
     app.post("/api/login", login)
     app.post("/api/logout", logout)
     app.post("/api/profile", profile)
+    app.put("/api/users/:userId", plant)
+    app.get("/api/users/:userId", userById)
+    app.get("/api/users/name/:userName", userByName)
 }
