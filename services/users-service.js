@@ -42,6 +42,12 @@ const addPlantOwned = (userId, plant) => {
         })
 }
 
+const findAllCropUsers = (plantId) => {
+    return usersDao.findAllCropUsers(plantId)
+        .then((listOfUsers) => {
+            return listOfUsers
+        })
+}
 
 module.exports = {
     register,
@@ -49,5 +55,6 @@ module.exports = {
     findAllUsers,
     findUserById,
     findUserByUserName,
-    addPlantOwned
+    addPlantOwned,
+    findAllCropUsers
 };

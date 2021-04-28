@@ -32,11 +32,19 @@ const addPlantOwned = (userId, plant) => {
         {returnOriginal: false, useFindAndModify: false})
 }
 
+const findAllCropUsers = (plantId) => {
+    return usersModel.find({
+        "plantsOwned.plantId" :
+            {$all: [plantId]}
+    })
+}
+
 module.exports = {
     findUserById,
     findUserByUsername,
     findUserByCredentials,
     createUser,
     findAllUsers,
-    addPlantOwned
+    addPlantOwned,
+    findAllCropUsers
 }

@@ -74,6 +74,18 @@ module.exports = (app) => {
             })
     }
 
+    const cropUsers = (req, res) => {
+        const plantId = req.params["plantId"]
+        usersService.findAllCropUsers(plantId)
+            .then((usersMatched) => {
+                if (usersMatched) {
+                    res.send(usersMatched)
+                } else {
+                    res.sendStatus(404)
+                }
+            })
+    }
+
     app.post("/api/register", register)
     app.post("/api/login", login)
     app.post("/api/logout", logout)
@@ -81,4 +93,5 @@ module.exports = (app) => {
     app.put("/api/users/:userId", plant)
     app.get("/api/users/:userId", userById)
     app.get("/api/users/name/:userName", userByName)
+    app.get("/api/plants/:plantId", cropUsers)
 }
