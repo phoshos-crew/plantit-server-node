@@ -8,7 +8,9 @@ const findAllPosts = () => {
 
 const findPostsForUser = (userId) => {
     return postsModel.find({originalPoster: userId}).select(
-        "type likedByUsers commentIds _id imageUrl createdAt updatedAt")
+        "type originalPoster likedByUsers commentIds _id imageUrl createdAt updatedAt")
+        .populate("originalPoster")
+        .exec()
 }
 
 const findPostById = (pid) => {
