@@ -1,6 +1,5 @@
 const postsModel = require('../models/posts/posts-model')
 const commentsModel = require('../models/comments/comments-model')
-const usersModel = require('../models/users/users-model')
 const mongoose = require('mongoose')
 
 const findAllPosts = () => {
@@ -27,8 +26,6 @@ const createPost = (post) => {
         .then(newPost => postsModel.findById(newPost._id)
             .populate('originalPoster', '_id username')
             .exec())
-
-
 }
 
 const updatePost = (pid, newPost) => {

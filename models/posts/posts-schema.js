@@ -15,7 +15,8 @@ const postsSchema = mongoose.Schema(
         commentIds: [{
                 type: String,
                 ref: 'CommentsModel'
-        }]},
+        }]
+    },
         { timestamps: true},
     {collection: "posts"})
 
