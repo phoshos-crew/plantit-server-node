@@ -18,6 +18,6 @@ const commentsSchema = mongoose.Schema(
         body: String
     },
     { timestamps: true},
-    {collection: "comments"})
+    {collection: "commentsmodels"})
 
 module.exports = commentsSchema

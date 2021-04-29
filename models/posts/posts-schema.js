@@ -18,6 +18,6 @@ const postsSchema = mongoose.Schema(
         }]
     },
         { timestamps: true},
-    {collection: "posts"})
+    {collection: "postsmodels"})
 
 module.exports = postsSchema
