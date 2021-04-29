@@ -37,6 +37,10 @@ module.exports = (app) => {
         }
     }
 
+    app.get('/api/users/:userId', (req, res) =>
+        usersService.findUserById(req.params.userId, res)
+                .then(user => res.send(user)))
+
     app.post("/api/register", register)
     app.post("/api/login", login)
     app.post("/api/logout", logout)

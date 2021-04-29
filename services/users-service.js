@@ -25,10 +25,16 @@ const findAllUsers = () => {
     return usersDao.findAllUsers();
 }
 
+const findUserById = (userId) => {
+    return usersDao.findUserById(userId);
+}
+
+
 
 module.exports = {
     createUser,
     login,
     register,
-    findAllUsers
+    findAllUsers,
+    findUserById
 };
