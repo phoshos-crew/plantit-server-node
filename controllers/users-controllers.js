@@ -2,7 +2,7 @@ module.exports = (app) => {
     const usersService = require("../services/users-service")
 
     const register = (req, res) => {
-        const user = req.body;
+        const user = req.body.newUser;
         usersService.register(user, res)
             .then((actualUser) => {
                 req.session['currentUser'] = actualUser
