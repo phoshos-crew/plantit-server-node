@@ -1,4 +1,6 @@
 const usersModel = require("../models/users/users-model")
+const mongoose = require("mongoose")
+
 const findAllUsers = () => {
     return usersModel.find();
 }
@@ -19,7 +21,17 @@ const findUserByCredentials = (username, password) => {
 }
 
 const createUser = (user) => {
-    return usersModel.create(user)
+    return usersModel.create(
+        {
+            _id: new mongoose.Types.ObjectId().toHexString(),
+            username: user.username,
+            password: user.password,
+            firstName: user.firstName,
+            lastName: user.lastName,
+            email: user.email,
+            phone: user.phone,
+            role: user.role
+        }).then(user => user)
 }
 
 const addPlantOwned = (userId, plant) => {
@@ -28,13 +40,14 @@ const addPlantOwned = (userId, plant) => {
         {
             $push: {
                 plantsOwned: {plantId: plant}
-            }},
+            }
+        },
         {returnOriginal: false, useFindAndModify: false})
 }
 
 const findAllCropUsers = (plantId) => {
     return usersModel.find({
-        "plantsOwned.plantId" :
+        "plantsOwned.plantId":
             {$all: [plantId]}
     })
 }
