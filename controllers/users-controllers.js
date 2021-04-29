@@ -3,7 +3,7 @@ module.exports = (app) => {
 
     const register = (req, res) => {
         const user = req.body;
-        usersService.register(user)
+        usersService.register(user, res)
             .then((actualUser) => {
                 req.session['currentUser'] = actualUser
                 res.send(actualUser)
