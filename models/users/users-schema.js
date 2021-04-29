@@ -17,14 +17,7 @@ const usersSchema = mongoose.Schema(
                 type: String,
                 ref: 'GroupsModel'
         }],
-        comments: [{
-                type: String,
-                ref: 'CommentsModel'
-        }],
-        posts: [{
-                type: String,
-                ref: 'PostsModel'
-        }]
+        plantsOwned: [{plantId: String, _id: false}]
     }, {collection: "users"})
 
 module.exports = usersSchema

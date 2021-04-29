@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const postsSchema = mongoose.Schema(
     {
         _id: String,
+        type: {type: String, default: 'post'},
         imageUrl: String,
         likedByUsers: [{
                 type: String,
@@ -15,6 +16,8 @@ const postsSchema = mongoose.Schema(
                 type: String,
                 ref: 'CommentsModel'
         }]
-    }, {collection: "posts"})
+    },
+        { timestamps: true},
+    {collection: "posts"})
 
 module.exports = postsSchema

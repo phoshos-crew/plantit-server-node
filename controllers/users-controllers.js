@@ -37,12 +37,61 @@ module.exports = (app) => {
         }
     }
 
-    app.get('/api/users/:userId', (req, res) =>
-        usersService.findUserById(req.params.userId, res)
-                .then(user => res.send(user)))
+    const plant = (req, res) => {
+        const userId = req.params["userId"]
+        const plantToAdd = req.body.plantId;
+        usersService.addPlantOwned(userId, plantToAdd)
+            .then((updatedList) => {
+                if (updatedList) {
+                    res.send(updatedList)
+                } else {
+                    res.sendStatus(403)
+                }
+            })
+    }
+
+    const userById = (req, res) => {
+        const userId = req.params["userId"]
+        usersService.findUserById(userId)
+            .then((userFound) => {
+                if(userFound) {
+                    res.send(userFound)
+                } else {
+                    res.sendStatus(404)
+                }
+            })
+    }
+
+    const userByName = (req, res) => {
+        const userName = req.params["userName"]
+        usersService.findUserByUserName(userName)
+            .then((userFound) => {
+                if (userFound) {
+                    res.send(userFound)
+                } else {
+                    res.sendStatus(404)
+                }
+            })
+    }
+
+    const cropUsers = (req, res) => {
+        const plantId = req.params["plantId"]
+        usersService.findAllCropUsers(plantId)
+            .then((usersMatched) => {
+                if (usersMatched) {
+                    res.send(usersMatched)
+                } else {
+                    res.sendStatus(404)
+                }
+            })
+    }
 
     app.post("/api/register", register)
     app.post("/api/login", login)
     app.post("/api/logout", logout)
     app.post("/api/profile", profile)
+    app.get("/api/users/:userId", userById)
+    app.get("/api/users/name/:userName", userByName)
+    app.put("/api/plants/:userId", plant)
+    app.get("/api/plants/:plantId", cropUsers)
 }

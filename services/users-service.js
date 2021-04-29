@@ -17,24 +17,44 @@ const login = (username, password) => {
         })
 }
 
-const createUser = (user) => {
-    return usersDao.createUser(user);
-}
-
 const findAllUsers = () => {
     return usersDao.findAllUsers();
 }
 
 const findUserById = (userId) => {
-    return usersDao.findUserById(userId);
+    return usersDao.findUserById(userId)
+        .then((user) => {
+            return user
+        })
 }
 
+const findUserByUserName = (username) => {
+    return usersDao.findUserByUsername(username)
+        .then((user) => {
+            return user
+        })
+}
 
+const addPlantOwned = (userId, plant) => {
+    return usersDao.addPlantOwned(userId, plant)
+        .then((updatedPlant) => {
+            return updatedPlant
+        })
+}
+
+const findAllCropUsers = (plantId) => {
+    return usersDao.findAllCropUsers(plantId)
+        .then((listOfUsers) => {
+            return listOfUsers
+        })
+}
 
 module.exports = {
-    createUser,
-    login,
     register,
+    login,
     findAllUsers,
-    findUserById
+    findUserById,
+    findUserByUserName,
+    addPlantOwned,
+    findAllCropUsers
 };

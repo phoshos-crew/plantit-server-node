@@ -7,18 +7,8 @@ const findAllPosts = () => {
 }
 
 const findPostsForUser = (userId) => {
-    return postsModel.find({originalPoster: userId})
-        .populate('likedByUsers')
-        .populate({
-            path: 'commentIds',
-            populate: [{
-                path: 'originalPoster'
-            }, {
-                path: 'likedByUsers'
-            }]
-        })
-        .populate('originalPoster')
-        .exec();
+    return postsModel.find({originalPoster: userId}).select(
+        "type likedByUsers commentIds _id imageUrl createdAt updatedAt")
 }
 
 const findPostById = (pid) => {
@@ -32,11 +22,10 @@ const createPost = (post) => {
             imageUrl: post.imageUrl,
             likedByUsers: [],
             originalPoster: post.originalPoster,
-            commentIds: []
-        }
-    ).then(newPost => postsModel.findById(newPost._id)
-        .populate('originalPoster')
-        .exec())
+            commentIds: []})
+        .then(newPost => postsModel.findById(newPost._id)
+            .populate('originalPoster', '_id username')
+            .exec())
 }
 
 const updatePost = (pid, newPost) => {

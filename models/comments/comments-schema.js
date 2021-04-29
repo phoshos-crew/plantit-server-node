@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const commentsSchema = mongoose.Schema(
     {
         _id: String,
+        type: {type: String, default: 'comment'},
         postId: {
                 type: String,
                 ref: 'PostsModel'
@@ -14,7 +15,9 @@ const commentsSchema = mongoose.Schema(
                 type: String,
                 ref: 'UsersModel'
         },
-        commentBody: String
-    }, {collection: "comments"})
+        body: String
+    },
+    { timestamps: true},
+    {collection: "comments"})
 
 module.exports = commentsSchema

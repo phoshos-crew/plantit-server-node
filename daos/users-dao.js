@@ -22,10 +22,29 @@ const createUser = (user) => {
     return usersModel.create(user)
 }
 
+const addPlantOwned = (userId, plant) => {
+    return usersModel.findOneAndUpdate(
+        {_id: userId},
+        {
+            $push: {
+                plantsOwned: {plantId: plant}
+            }},
+        {returnOriginal: false, useFindAndModify: false})
+}
+
+const findAllCropUsers = (plantId) => {
+    return usersModel.find({
+        "plantsOwned.plantId" :
+            {$all: [plantId]}
+    })
+}
+
 module.exports = {
     findUserById,
     findUserByUsername,
     findUserByCredentials,
     createUser,
-    findAllUsers
+    findAllUsers,
+    addPlantOwned,
+    findAllCropUsers
 }
