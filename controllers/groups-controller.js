@@ -3,9 +3,9 @@ module.exports = (app) => {
 
 
     const profile = (req, res) => {
-        const currentUser = req.session["currentUser"]
-        if (currentUser) {
-            res.send(currentUser)
+        const currentGroup = req.session["currentGroup"]
+        if (currentGroup) {
+            res.send(currentGroup)
         } else {
             res.sendStatus(403)
         }
