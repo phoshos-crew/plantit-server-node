@@ -2,16 +2,6 @@ module.exports = (app) => {
     const groupsService = require("../services/groups-service")
 
 
-    const profile = (req, res) => {
-        const currentUser = req.session["currentUser"]
-        if (currentUser) {
-            res.send(currentUser)
-        } else {
-            res.sendStatus(403)
-        }
-    }
-
-
     const groupById = (req, res) => {
         const groupId = req.params["groupId"]
         groupsService.findGroupById(groupId)
@@ -36,7 +26,6 @@ module.exports = (app) => {
             })
     }
 
-    app.post("/api/profile", profile)
     app.get("/api/groups/:groupId", groupById)
     app.get("/api/groups/name/:groupName", groupByName)
 }
