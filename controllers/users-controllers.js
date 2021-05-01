@@ -86,6 +86,11 @@ module.exports = (app) => {
             })
     }
 
+    const findAllUsers = (req, res) => {
+        usersService.findAllUsers()
+            .then((users) => res.send(users))
+    }
+
     app.post("/api/register", register)
     app.post("/api/login", login)
     app.post("/api/logout", logout)
@@ -94,4 +99,5 @@ module.exports = (app) => {
     app.get("/api/users/name/:userName", userByName)
     app.put("/api/plants/:userId", plant)
     app.get("/api/plants/:plantId", cropUsers)
+    app.get("/api/users", findAllUsers)
 }
