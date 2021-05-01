@@ -19,9 +19,16 @@ const findGroupByGroupName = (groupName) => {
         })
 }
 
+const findAllGroupMembers = (groupId) => {
+    return groupsDao.findAllGroupMembers(groupId)
+        .then((members) => {
+            return members
+        })
+}
 
 module.exports = {
     findAllGroups,
     findGroupById,
     findGroupByGroupName,
+    findAllGroupMembers
 };
