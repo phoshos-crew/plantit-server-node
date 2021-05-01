@@ -40,6 +40,7 @@ app.use(function (req, res, next) {
 require("./controllers/users-controllers")(app)
 require("./controllers/posts-controller")(app)
 require("./controllers/comments-controller")(app)
+require("./controllers/groups-controller")(app)
 
 app.listen(process.env.PORT || 3001, () => {
     console.log(`Server is listening...`);

@@ -26,6 +26,12 @@ module.exports = (app) => {
             })
     }
 
+    const findAllGroups = (req, res) => {
+        groupsService.findAllGroups()
+            .then((groups) => res.send(groups))
+    }
+
     app.get("/api/groups/:groupId", groupById)
     app.get("/api/groups/name/:groupName", groupByName)
+    app.get("/api/groups", findAllGroups)
 }
