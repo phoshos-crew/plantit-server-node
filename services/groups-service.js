@@ -1,4 +1,4 @@
-const usersDao = require("../daos/groups-dao")
+const groupsDao = require("../daos/groups-dao")
 
 const findAllGroups = () => {
     return groupsDao.findAllGroups();
@@ -7,6 +7,7 @@ const findAllGroups = () => {
 const findGroupById = (groupId) => {
     return groupsDao.findGroupById(groupId)
         .then((group) => {
+
             return group
         })
 }
